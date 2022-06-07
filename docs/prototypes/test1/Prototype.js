@@ -1,6 +1,7 @@
 class Prototype extends Game {
     #player;
     #map;
+    #enemies = [];
     constructor() { 
         super();
 
@@ -8,6 +9,8 @@ class Prototype extends Game {
 
         this.#player = new Player(100, 100);
         this.#map = new Map(15);
+
+        this.#enemies.push(new Enemy(300, 300, this.#player.Position));
     }
 
     Update() { 

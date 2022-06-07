@@ -1,7 +1,7 @@
 class Obstacle extends GameObject {
     constructor(x, y) {
         super(x, y, Settings.GridSize, Settings.GridSize);
-        this.CollisionLayer = Settings.Layers.GROUND;
+        this.CollisionLayer = Settings.Layers.OBSTACLES;
         this.SetDefaultCollider();
     }
 

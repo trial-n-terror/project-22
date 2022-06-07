@@ -3,11 +3,20 @@ class Settings {
     
     static Layers = {
         PLAYER: 0,
-        GROUND: 1
+        OBSTACLES: 1,
+        GROUNDENEMIES: 2
     };
 
     static LayerInteractions = {
-        [Settings.Layers.PLAYER]: [Settings.Layers.GROUND]
+        [Settings.Layers.PLAYER]: [
+            Settings.Layers.OBSTACLES,
+            // Settings.Layers.GROUNDENEMIES
+        ],
+        [Settings.Layers.GROUNDENEMIES]: [
+            Settings.Layers.OBSTACLES,
+            Settings.Layers.GROUNDENEMIES,
+            Settings.Layers.PLAYER
+        ]
     };
 
     static BackgroundColor = "#FFF";

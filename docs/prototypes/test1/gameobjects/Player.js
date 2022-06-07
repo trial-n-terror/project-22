@@ -1,5 +1,7 @@
 class Player extends GameObject { 
     #speed = 5;
+    #hitBy = [];
+
     constructor(x, y) { 
         super(x, y, 50, 50);
         this.CollisionLayer = Settings.Layers.PLAYER;
@@ -34,4 +36,25 @@ class Player extends GameObject {
             this.Position.add(goto.mult(this.#speed));
         }
     }
+
+    Hit() {
+        new HitText(this.Position.x, this.Position.y - this.Height / 2);
+    }
+
+
+    // OnOverlap(otherSprites) {
+    //     otherSprites.forEach(sprite => {
+    //         if (sprite instanceof Enemy && this.#hitBy.includes(sprite) === false) {
+    //             console.log("hit!");
+    //             this.#hitBy.push(sprite);
+    //             this.#GetHit(sprite);
+    //         }
+    //     });
+    // }
+
+    // #GetHit(enemy) {
+    //     setTimeout(() => {
+    //         this.#hitBy = this.#hitBy.filter(x => x != enemy)
+    //     }, 500);
+    // }
 }

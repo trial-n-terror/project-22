@@ -7,9 +7,10 @@ class Prototype extends Game {
 
         noiseSeed(3);
 
-        this.#player = new Player(100, 100);
+        this.#player = new Player(100, 150);
         this.#map = new Map(15);
 
+        this.#enemies.push(new Enemy(300, 300, this.#player.Position));
         this.#enemies.push(new Enemy(300, 300, this.#player.Position));
     }
 

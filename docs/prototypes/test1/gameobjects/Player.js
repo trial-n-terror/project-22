@@ -12,7 +12,7 @@ class Player extends GameObject {
 
         this.#viewDirection = createVector(1, 0);
 
-        this.#skills.push(new Skill(this, 175, 25));
+        this.#skills.push(new Skill(this, createVector(0, 0), Skill.SkillDirections.FORWARD, 500, 500));
     }
 
     get ViewDirection() {
@@ -27,7 +27,13 @@ class Player extends GameObject {
         else {
             fill("red");
         }
+
+        noFill();
+        stroke(0);
+
         rect(0, 0, this.Width, this.Height);
+
+        line(0, 0, this.ViewDirection.x * 10, this.ViewDirection.y * 10);
 
         let goto = createVector(0, 0);
 
